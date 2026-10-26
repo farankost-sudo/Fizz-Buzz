@@ -1,31 +1,15 @@
-use std::io;
 
-fn main()
-{
-    for i in 1..=100
-    {
-        if i % 3 == 0 && i % 5 == 0
-        {
-            println!("FizzBuzz");
+fn main() {
+    let number = [3, 5];
+    for i in 1..=100 {
+        match [i % number[0], i % number[1]] {
+            [0, 0] => println!("FizzBuzz"),
+            [0, _] => println!("Fizz"),
+            [_, 0] => println!("Buzz"),
+            _ => println!("{i}"),
         }
-
-        else if i % 3 == 0
-        {
-          println!("Fizz")
-        }
-
-        else if i % 5 == 0
-        {
-            println!("Buzz")
-        }
-        else
-        {
-            println!("{i}")
-        }
-
     }
 }
-
 
 
 
